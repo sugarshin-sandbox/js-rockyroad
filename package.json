@@ -1,0 +1,21 @@
+{
+  "name": "js-rockyroad",
+  "private": true,
+  "description": "JavaScript a rocky road ahead.",
+  "scripts": {
+    "test": "mocha --compilers js:espower-babel/guess",
+    "test:all": "npm run test -- test/*.js",
+    "tdd": "mocha --compilers js:espower-babel/guess test/*.js --watch question/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sugarshin/js-rockyroad.git"
+  },
+  "author": "sugarshin",
+  "license": "MIT",
+  "devDependencies": {
+    "espower-babel": "^3.3.0",
+    "mocha": "^2.3.3",
+    "power-assert": "^1.0.1"
+  }
+}
