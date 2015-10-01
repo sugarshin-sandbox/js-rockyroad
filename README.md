@@ -18,7 +18,7 @@ npm install
 
 ```
 # テスト
-npm run test
+npm test -- test/filename.js
 
 # 全テスト
 npm run test:all
