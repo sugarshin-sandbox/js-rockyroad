@@ -40,7 +40,7 @@ describe('ascending-sort-by-id', () => {
       }
     ];
 
-    assert.deepEqual(data, expected);
+    assert.deepEqual(data, expected, 'argument is immutable');
   });
 
   it('case 1', () => {
@@ -74,7 +74,7 @@ describe('ascending-sort-by-id', () => {
       }
     ];
 
-    assert(actual === expected);
+    assert.deepEqual(actual, expected, 'case 1');
   });
 
 });
