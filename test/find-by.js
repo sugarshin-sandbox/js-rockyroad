@@ -56,7 +56,7 @@ describe('find-by', () => {
       {userID: 3, name: 'abebe', tags: ['c']},
       {userID: 0, name: 'abebe', tags: ['c', 'a']},
       {userID: 5, name: 'hoge', tags: []}
-    ], {name: 'abebe', userID: 2);
+    ], {name: 'abebe', userID: 2});
 
     const expected = null;
 
