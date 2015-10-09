@@ -17,8 +17,7 @@ export default function(array) {
   return flattenDeep(array);
 }
 
-function flattenDeep(array, result) {
-  result = result || [];
+function flattenDeep(array, result = []) {
   array.forEach(el => {
     if (Array.isArray(el)) {
       flattenDeep(el, result);
