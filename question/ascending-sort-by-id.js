@@ -14,5 +14,5 @@
 */
 
 export default function(array) {
-
+  return array.slice().sort((a, b) => a.id - b.id);
 }

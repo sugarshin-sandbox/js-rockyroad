@@ -13,5 +13,7 @@
 */
 
 export default function(array) {
-
+  return array.reduce((maxID, object) => {
+    return Math.max(maxID, object.id);
+  }, 0) + 1;
 }
