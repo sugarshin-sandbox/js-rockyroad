@@ -14,5 +14,17 @@
 */
 
 export default function(array) {
+  return flattenDeep(array);
+}
 
+function flattenDeep(array, result) {
+  result = result || [];
+  array.forEach(el => {
+    if (Array.isArray(el)) {
+      flattenDeep(el, result);
+    } else {
+      result.push(el);
+    }
+  });
+  return result;
 }
