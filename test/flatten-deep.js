@@ -28,13 +28,13 @@ describe('flatten-deep', () => {
   it('case 1', () => {
     const actual = func([
       [2, [3, 5], ''],
-      [4, 5, [7, 8], [[[' ']]], [undefined]],
+      [4, 5, [7, 8], [[[' ']]], [undefined, [[{}]]]],
       [1, [[4, false]], true, null]
     ]);
 
     const expected = [
       2, 3, 5, '',
-      4, 5, 7, 8, ' ', undefined,
+      4, 5, 7, 8, ' ', undefined, {},
       1, 4, false, true, null
     ];
 
