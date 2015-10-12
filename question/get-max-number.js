@@ -11,14 +11,14 @@ export default function(array) {
 }
 
 function permute(array, permuted = [], usedCharacters = []) {
-  array.forEach((v, i) => {
-    let el = array.splice(i, 1)[0];
-    usedCharacters.push(el);
-    if (array.length === 0) {
+  array.forEach((num, i, thisArray) => {
+    usedCharacters.push(num);
+    thisArray.splice(i, 1);
+    if (thisArray.length === 0) {
       permuted.push(usedCharacters.slice());
     }
-    permute(array, permuted, usedCharacters);
-    array.splice(i, 0, el);
+    permute(thisArray, permuted, usedCharacters);
+    thisArray.splice(i, 0, num);
     usedCharacters.pop();
   });
   return permuted
