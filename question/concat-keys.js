@@ -25,8 +25,8 @@ export default function(array) {
       const values = getValues(val);
       result[key] = result[key] || []
       values.forEach(v => {
-        if (!result[key].some(el => v === el)) {
-          result[key] = result[key].concat(values);
+        if (!result[key].includes(v)) {
+          result[key].push(v);
           result[key].sort();
         }
       });
