@@ -18,7 +18,32 @@
   @param {Array} array
   @returns {Array}
 */
-
+import 'babel-core/polyfill';
 export default function(array) {
+  const ret = array.reduce((result, currentObject) => {
+    objectForEach(currentObject, (val, key) => {
+      const values = getValues(val);
+      result[key] = result[key] || []
+      values.forEach(v => {
+        if (!result[key].some(el => v === el)) {
+          result[key] = result[key].concat(values);
+          result[key].sort();
+        }
+      });
+    });
+    return result;
+  }, {});
 
+  return [ret];
+}
+
+function getValues(value) {
+  if (typeof value === 'string') return [value];
+  return Object.values(value);
+}
+
+function objectForEach(object, callback, thisArg = null) {
+  Object.keys(object).forEach((key, i, keys) => {
+    callback.call(thisArg, object[key], key, i, keys, object);
+  });
 }
