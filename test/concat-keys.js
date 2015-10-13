@@ -152,7 +152,7 @@ describe('concat-keys', () => {
       {
         animal: ['cat', 'dog'],
         fruits: ['apple', 'banana', 'peach', 'strawberry'],
-        color: ['red', 'yellow']
+        color: ['yellow']
       }
     ];
 
