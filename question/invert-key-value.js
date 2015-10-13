@@ -18,7 +18,7 @@
   @param {Object} object
   @returns {Object}
 */
-import 'babel-core/polyfill';
+
 export default function(object) {
   return objectReduce(object, (result, currentVal, currentKey, i, keys) => {
     if (result[currentVal]) {
