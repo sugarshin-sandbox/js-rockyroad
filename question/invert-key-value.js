@@ -28,10 +28,7 @@ export default function(object) {
     }
 
     if (i === keys.length - 1) {
-      return objectReduce(result, (ret, val, key) => {
-        ret[key] = Array.from(val);
-        return ret;
-      }, {});
+      return objectMap(result, set => Array.from(set));
     }
 
     return result;
@@ -42,4 +39,11 @@ function objectReduce(object, callback, initialValue, thisArg = null) {
   return Object.keys(object).reduce((returnValue, currentKey, i, keys) => {
     return callback.call(thisArg, returnValue, object[currentKey], currentKey, i, keys, object);
   }, initialValue);
+}
+
+function objectMap(object, callback, thisArg = null) {
+  return Object.keys(object).reduce((returnObject, currentKey, i, keys) => {
+    returnObject[currentKey] = callback.call(thisArg, object[currentKey], currentKey, i, keys, object);
+    return returnObject;
+  }, {});
 }
