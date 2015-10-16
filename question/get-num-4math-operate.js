@@ -39,7 +39,7 @@ function objectReduce(object, callback, initialValue, thisArg = null) {
 }
 
 function mapOperator(keyword) {
-  switch(keyword) {
+  switch (keyword) {
   case 'add':
     return '+';
   case 'sub':
