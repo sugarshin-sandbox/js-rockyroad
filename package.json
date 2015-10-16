@@ -1,5 +1,6 @@
 {
   "name": "js-rockyroad",
+  "version": "0.0.1",
   "description": "JavaScript a rocky road ahead.",
   "scripts": {
     "test": "mocha --compilers js:espower-babel/guess",
