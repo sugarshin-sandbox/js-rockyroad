@@ -19,7 +19,7 @@
   @param {Array} array
   @returns {Array}
 */
-import 'babel-core/polyfill';
+import 'babel-polyfill';
 export default function(array) {
   const ret = array.reduce((result, currentObject) => {
     objectForEach(currentObject, (val, key) => {
