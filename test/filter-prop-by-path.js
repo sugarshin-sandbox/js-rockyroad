@@ -14,7 +14,7 @@ describe('filter-prop-by-path', () => {
           c: 2,
           f: ''
         },
-        e: [5, '']
+        e: [5, { f: 33 }]
       },
       d: 3
     };
@@ -27,7 +27,7 @@ describe('filter-prop-by-path', () => {
           c: 2,
           f: ''
         },
-        e: [5, '']
+        e: [5, { f: 33 }]
       },
       d: 3
     };
@@ -84,6 +84,33 @@ describe('filter-prop-by-path', () => {
     };
 
     assert.deepEqual(actual, expected, 'case 2');
+  });
+
+  it('case 3', () => {
+    const actual = func({
+      a: {
+        b: [
+          {
+            g: 1,
+            j: [2, 3, 5]
+          }
+        ]
+      },
+      d: 3
+    }, 'a.b[0].g');
+
+    const expected = {
+      a: {
+        b: [
+          {
+            j: [2, 3, 5]
+          }
+        ]
+      },
+      d: 3
+    };
+
+    assert.deepEqual(actual, expected, 'case 3');
   });
 
 });
